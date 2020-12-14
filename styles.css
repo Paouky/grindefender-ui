@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background-color: #1C1C1C;
+    color: #BCC7BF;
+}
+
+img {
+    margin-top: 50px;
+    width: 100px;
+}
+
+h1, h2 {
+    align-self: center;
+    padding: 5px 0;
+}
+
+.container {
+    padding: 10px 0 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+table, th, td {
+    background-color: #1C1C1C;
+    border: none;
+    padding: 8px;
+    margin: 0 100px;
+    text-align: left;
+}
+
+.inline-table {
+    display: inline-block;
+    display: flex;
+    align-items: flex-start;
+}
+
+
+.vertical-align {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.time {
+    font-size: 1em;
+    letter-spacing: 0.25em;
+    color: green;
+    font-weight: 100;
+}
+
+.warning {
+    width: 500px;
+    height: 150px;
+    margin: 0 auto;
+    border: 2px red solid;
+    border-radius: 5px;
+    box-shadow: 0 0 10px red;
+}
+
+.safe {
+    width: 500px;
+    height: 150px;
+    margin: 0 auto;
+    border: 2px green solid;
+    border-radius: 5px;
+    box-shadow: 0 0 10px green;
+}
+
+.details {
+    background-color: #161616;
+    box-shadow: 0px 0px 2px black;
+    width: 640px;
+    margin: 60px auto;
+    padding-bottom: 40px;
+    padding: 10px;
+}
+
+h4 {
+    padding-bottom: 10px;
+}
+
+.details h2 {
+    padding-bottom: 40px;
+}
+
+.details table {
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+.details table:last-of-type {
+    margin-bottom: 0;
+}
+
+.details th {
+}
+
+.details td {
+    box-shadow: 0px 0px 1px black;
+}
+
+.about {
+    width: 1000px;
+    padding-top: 50px 0;
+    padding-bottom: 25px;
+    margin: 20px auto;
+}
+
+.about h4 {
+    border-bottom: 1px dashed green;
+
+}
+
+.about p:first-of-type {
+    margin-top: 12px;
+
+}
+
+.about p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.subtext {
+    display: inline;
+    font-size: 12px;
+}

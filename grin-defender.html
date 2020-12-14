@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'/>
+    <title>Grin Nicehash Defender</title>
+    <link rel='stylesheet' href='styles.css'/>
+</head>
+<body>
+
+  <center>
+      <img src="grin-shield.png">
+  </center>
+
+  <div class="container title">
+      <div class="vertical-align">
+          <h1>Grin Nicehash Defender</h1>
+          <h2 class = "time">{{ data['ts'] }}</h2>
+      </div>
+  </div>
+
+
+  <div class="container title">
+      {% if data['under_attack'] %}
+      <div class="warning vertical-align">
+          <h2>WARNING!</h2>
+          <h2>Grin may be under attack</h2>
+      </div>
+      {% else %}
+      <div class="safe vertical-align">
+          <h2>HEALTHY</h2>
+          <h2>No attack detected</h2>
+      </div>
+      {% endif %}
+  </div>
+
+
+
+  <div class="container">
+      <table class ="inline-table">
+          <tr> <th colspan="2">Defense Bot Funds</th> </tr>
+          <tr> <td>BTC</td><td>{{ data['wallet_status']['nicehash'] }}</td> </tr>
+          <tr> <td>Grin</td><td>{{ data['wallet_status']['grin'] }}</td> </tr>
+      </table>
+
+      <table class ="inline-table">
+          <tr> <th colspan="2">Active Defensive Orders</th> </tr>
+          <tr> <td>EU</td><td>{{ data['order_status']['EU'] }}</td> </tr>
+          <tr> <td>USA</td><td>{{ data['order_status']['USA'] }}</td> </tr>-->
+      </table>
+  </div>
+
+  <div class="container donations">
+      <table>
+          <tr> <th colspan="2" align="left">Defense Fund Donation Address</th> </tr>
+          <tr> <td>BTC</td><td>3FxrAgq9Ymvgay51Bm3WiCxQD5sgWmgjH1</td> </tr>
+          <tr> <td>Grin</td><td>grin1ft0jtfjtnxsrr8drwqzfzyaku0f2wpthj52d704meu4d6nscx60q525ky6</td> </tr>
+      </table>
+  </div>
+
+
+  <div class="details">
+      <h2>Details</p>
+      {% if data['attack_stats']['grin51'] is defined %}
+      <h4><i>Grin51</i> Health Scores</h4>
+      <table>
+          <tr> <th>Measurement</th>
+          <th>Score (% of normal)</th> </tr>
+
+          <tr> <td>NiceHash Order Price</td>
+          <td>{{ (data['attack_stats']['grin51']['score']['nh_price_score'] * 100)|int}}</td> </tr>
+
+          <tr> <td>NiceHash Active Speed</td>
+          <td>{{ (data['attack_stats']['grin51']['score']['nh_speed_score'] * 100)|int }}</td> </tr>
+
+          <tr> <td>NiceHash Mining Unprofitability</td>
+          <td>{{ (data['attack_stats']['grin51']['score']['nh_mining_profitability_score'] * 100)|int }}</td> </tr>
+      </table>
+      {% endif %}
+
+
+
+      {% if data['attack_stats']['grin-health'] is defined %}
+      <h4><i>grin-health</i> Health Scores</h4>
+      <table>
+          <tr> <th>Indicator</td>
+          <th>Score <p class="subtext">(5 = healthy, 0 = unhealthy)<br> alert threshold = 0</p></th> </tr>
+          <tr> <td>Overall Score</td> <td>{{ data['attack_stats']['grin-health']['overall_score'] }}</td> </tr>
+
+          <tr> <td>Chain Reorg Score</td>
+          <td>{{ data['attack_stats']['grin-health']['reorg_score'] }}</td> </tr>
+
+          <tr> <td>NiceHash Score</td>
+          <td>{{ data['attack_stats']['grin-health']['nicehash_score'] }}</td> </tr>
+      </table>
+      {% endif %}
+
+
+      {% if data['attack_stats']['file'] is defined %}
+      <h4>Debugging Health Scores</h4>
+      <table>
+          <tr> <td>Testing in progress</td>
+          <td> {{ data['attack_stats']['file']['exists'] }} </td> </tr>
+      </table>
+      {% endif %}
+  </div>
+
+
+  <div class="about">
+     <h4>About GrinDefender.online</h4>
+     <p>Grin NiceHash Defender is an open-source bot that Grin community members can use to help defend the Grin network. If abnormal activity
+     is detected the bot will rent C32 hashpower from Nicehash to increase Grin network security for the duration of the attack</p>
+     <p>GrinDefender.online service is a community funded instance of the Grin NiceHash Defender bot. Donations to Defense Fund Donation
+     Addresses (above) will be used to purchase Cuckatoo32 on NiceHash to defend Grin from a 51% attack</p>
+     <p>For more information, to run your own grin nicehash defender instance, or to contribute code to the project, please visit the <a href=
+     "https://github.com/bladedoyle/grin_nicehash_defender">github project</a> page</p>
+     <p>Disclaimer:  It may not work</p>
+  </div>
+
+
+</body>
+</html>
